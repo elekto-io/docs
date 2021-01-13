@@ -1,41 +1,29 @@
 ---
 layout: page
-title: Docsy Jekyll Theme
+title: Elekto Project Home
 permalink: /
 ---
 
-# Welcome to Docsy Jekyll
+![assets/img/banner.jpg](assets/img/banner.jpg)
 
-This is a starter template for a docsy jekyll theme.
+# Welcome to The Elekto Project
 
-![assets/img/docsy-jekyll.png](assets/img/docsy-jekyll.png)
+The Elekto Project develops Elekto, simple software for secure online elections.
 
-## Purpose
+Elekto was created as part of an [LFX](https://lfx.linuxfoundation.org/) internship for the Kubernetes project
+by [Manish Sahani](https://github.com/kalkayan), and is now a [CNCF](https://www.cncf.io) infrastructure project.
 
-GitHub pages uses Jekyll natively, so when I make documentation, I typically
-look for Jekyll templates. Why? Using Jekyll means that I can use markdown,
-and allow for users to easily contribute, and build automatically just by
-way of pushing to a master branch (or general GitHub pages).
-I found Docsy, a beautiful Hugo template, but it requires hugo with GoLang
-which doesn't render natively on GitHub pages. For this reason, I've spent
-some time creating a custom Jekyll template that is (almost) as beautiful,
-and includes all the features that I might want.
+*If you have reached here trying to vote in an online election, you are in the wrong place.*
 
 ## Features
 
-What are these features? You should see the {% include doc.html name="Getting Started" path="getting-started" %}
-guide for a complete summary. Briefly:
+Elekto was designed to support the following:
 
- - *User interaction* including consistent permalinks, links to ask questions via GitHub issues, and edit the file on GitHub directly.
- - *Search* across posts, documentation, and other site pages, with an ability to exclude from search.
- - *External Search* meaning an ability to link any page tag to trigger an external search.
- - *Documentation* A documentation collection that was easy to organize on the filesystem, render with nested headings for the user, and refer to in markdown.
- - *Pages* A separate folder for more traditional pages (e.g, about).
- - *Navigation*: Control over the main navigation on the left of the page, and automatic generation of table of contents for each page on the right.
- - *News* A posts feed for news and updates, along with an archive (organized by year).
- - *Templates* or specifically, "includes" that make it easy to create an alert, documentation link, or other content.
- - *Continuous Integration* recipes to preview the site
+- 100% [GitOps](https://about.gitlab.com/topics/gitops/) workflow for configuration and election administration
+- 100% Oauth-driven workflow for voters (no emails)
+- Preference election voting (starting with Condorcet)
+- Multiple elections for the same organization
+- Responsive web design
+- Secret ballot voting
 
-
-For features, getting started with development, see the {% include doc.html name="Getting Started" path="getting-started" %} page. Would you like to request a feature or contribute?
-[Open an issue]({{ site.repo }}/issues)
+The Elekto project was inspired by the long-running [CIVS project](https://github.com/andrewcmyers/civs).
