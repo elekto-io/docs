@@ -1,98 +1,89 @@
-# Docsy Jekyll Theme
+# Docsy Example
 
-[![CircleCI](https://circleci.com/gh/vsoch/docsy-jekyll/tree/master.svg?style=svg)](https://circleci.com/gh/vsoch/docsy-jekyll/tree/master)
-<a href="https://jekyll-themes.com/docsy-jekyll/">
-    <img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield" >
-</a>
+[Docsy](https://github.com/google/docsy) is a Hugo theme for technical documentation sites, providing easy site navigation, structure, and more. This **Docsy Example Project** uses the Docsy theme, as well as providing a skeleton documentation structure for you to use. You can either copy this project and edit it with your own content, or use the theme in your projects like any other [Hugo theme](https://gohugo.io/themes/installing-and-using-themes/).
 
-![https://raw.githubusercontent.com/vsoch/docsy-jekyll/master/assets/img/docsy-jekyll.png](https://raw.githubusercontent.com/vsoch/docsy-jekyll/master/assets/img/docsy-jekyll.png)
-
-This is a [starter template](https://vsoch.github.com/docsy-jekyll/) for a Docsy jekyll theme, based
-on the Beautiful [Docsy](https://github.com/google/docsy) that renders with Hugo. This version is intended for
-native deployment on GitHub pages. The original [Apache License](https://github.com/vsoch/docsy-jekyll/blob/master/LICENSE) is included.
-
-## Changes
-
-The site is intended for purely documentation, so while the front page banner
-is useful for business or similar, this author (@vsoch) preferred to have
-the main site page go directly to the Documentation view. Posts
-are still provided via a feed.
-
-## Usage
-
-### 1. Get the code
-
-You can clone the repository right to where you want to host the docs:
+The theme is included in this project as a Git submodule:
 
 ```bash
-git clone https://github.com/vsoch/docsy-jekyll.git docs
-cd docs
+▶ git submodule
+ a053131a4ebf6a59e4e8834a42368e248d98c01d themes/docsy (heads/master)
 ```
 
-### 2. Customize
+This Docsy Example Project is hosted at [https://example.docsy.dev/](https://example.docsy.dev/).
 
-To edit configuration values, customize the [_config.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_config.yml).
-To add pages, write them into the [pages](https://github.com/vsoch/docsy-jekyll/blob/master/pages) folder. 
-You define urls based on the `permalink` attribute in your pages,
-and then add them to the navigation by adding to the content of [_data/toc.myl](https://github.com/vsoch/docsy-jekyll/blob/master/_data/toc.yml).
-The top navigation is controlled by [_data/navigation.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_data/navigation.yml)
+You can find detailed theme instructions in the Docsy user guide: https://docsy.dev/docs/
 
-### 3. Options
+This is not an officially supported Google product. This project is currently maintained.
 
-Most of the configuration values in the [_config.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_config.yml) are self explanatory,
-and for more details, see the [getting started page](https://vsoch.github.io/docsy-jekyll/docs/getting-started)
-rendered on the site.
+## Using the Docsy Example Project as a template
 
-### 4. Serve
+A simple way to get started is to use this project as a template, which gives you a site project that is set up and ready to use. To do this: 
 
-Depending on how you installed jekyll:
+1. Click **Use this template**.
+
+2. Select a name for your new project and click **Create repository from template**.
+
+3. Make your own local working copy of your new repo using git clone, replacing https://github.com/my/example.git with your repo’s web URL:
 
 ```bash
-jekyll serve
-# or
-bundle exec jekyll serve
+git clone --recurse-submodules --depth 1 https://github.com/my/example.git
 ```
 
-### 5. Run as a container in dev or prod
+You can now edit your local versions of the site’s source files.
 
-#### Software Dependencies
-
-If you want to run docsy jekyll via a container for development (dev) or production (prod) you can use containers. This approach requires installing [docker-ce](https://docs.docker.com/engine/install/ubuntu/) and [docker-compose](https://docs.docker.com/compose/install/). 
-
-#### Customization
-
-Note that the [docker-compose.yml](docker-compose.yml) file is using the [jekyll/jekyll:3.8](https://hub.docker.com/r/jekyll/jekyll/tags) image. If you want to make your build more reproducible, you can specify a particular version for jekyll (tag). Note that at the development time of writing this documentation, the latest was tag 4.0.0,
-and it [had a bug](https://github.com/fastai/fastpages/issues/267#issuecomment-620612896) that prevented the server from deploying.
-
-If you are deploying a container to production, you should remove the line to
-mount the bundles directory to the host in the docker-compose.yml. Change:
-
-```yaml
-    volumes: 
-      - "./:/srv/jekyll"
-      - "./vendor/bundle:/usr/local/bundle"
-      # remove "./vendor/bundle:/usr/local/bundle" volume when deploying in production
-```
-
-to:
-
-```yaml
-    volumes: 
-      - "./:/srv/jekyll"
-```
-
-This additional volume is optimal for development so you can cache the bundle dependencies,
-but should be removed for production. 
-
-#### Start Container
-
-Once your docker-compose to download the base container and bring up the server:
+If you want to do SCSS edits and want to publish these, you need to install `PostCSS`
 
 ```bash
-docker-compose up -d
+npm install
 ```
 
-You can then open your browser to [http://localhost:4000](http://localhost:4000)
-to see the server running.
+## Running the website locally
 
-> Node : changes `baseurl: ""` in _config.yml  when you are running in local and prod according to the requirement.
+Once you've cloned or copied the site repo, from the repo root folder, run:
+
+```
+hugo server
+```
+
+## Running a container locally
+
+You can run docsy-example inside a [Docker](ihttps://docs.docker.com/)
+container, the container runs with a volume bound to the `docsy-example`
+folder. This approach doesn't require you to install any dependencies other
+than Docker.
+
+1. Build the docker image 
+
+```bash
+docker build -f dev.Dockerfile -t docsy-example-dev:latest .
+```
+
+1. Run the built image
+
+```bash
+docker run --publish 1313:1313 --detach --mount src="$(pwd)",target=/home/docsy/app,type=bind docsy-example-dev:latest
+```
+
+Open your web browser and type `http://localhost:1313` in your navigation bar,
+This opens a local instance of the docsy-example homepage. You can now make
+changes to the docsy example and those changes will immediately show up in your
+browser after you save.
+
+To stop the container, first identify the container ID with:
+
+```bash
+docker container ls
+```
+
+Take note of the hexadecimal string below the `CONTAINER ID` column, then stop
+the container:
+
+```bash
+docker stop [container_id]
+```
+
+To delete the container run:
+
+```
+docker container rm [container_id]
+```

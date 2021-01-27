@@ -1,0 +1,27 @@
+/*
+
+Add styles or override variables from the theme here.
+
+*/
+
+$elekto-primary: #1d1e20;
+
+// $primary:#38a0ff;
+$primary: $elekto-primary;
+$google_font_name: "Noto Sans";
+$google_font_family: "Noto+Sans:300,400,600,700";
+
+// $enable-gradients: false;
+// $enable-rounded: false;
+// $enable-shadows: false;
+
+.motto {
+    font-size: 80px;
+    line-height: 100%;
+    font-weight: 800;
+}
+
+// #td-cover-block-0
+.td-cover-block {
+    background-color: rgba(0, 0, 0, 0.7);
+}
