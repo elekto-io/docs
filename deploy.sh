@@ -12,6 +12,28 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 #
-rm -rf public/
-HUGO_ENV="production" hugo --gc || exit 1
-s3deploy -source=public/ -region=eu-west-1 -bucket=bep.is -distribution-id=E8OKNT7W9ZYZ2 -path temp/td
+
+set -e  # If a command fails then the deploy stops
+printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+
+if [ "`git status -s`" ]
+then
+    echo "The working directory is dirty. Please commit any pending changes."
+    exit 1;
+fi
+
+echo "Deleting old publication"
+rm -rf docs
+mkdir docs
+git worktree prune
+rm -rf .git/worktrees/docs/
+
+echo "Generating site"
+hugo
+echo "elekto.io"> docs/CNAME
+
+echo "Updating gh-pages branch"
+git add docs && git commit -m "Publishing to github (deploy.sh)"
+
+echo "Pushing to github"
+git push --all

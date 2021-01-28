@@ -1,3 +1,6 @@
 vendor
 _site
 Gemfile.lock
+node_modules
+public
+resources

@@ -1,6 +1,7 @@
 title = "Elekto"
 baseURL = "https://elekto.io"
 disableKinds = ["taxonomy", "taxonomyTerm"]
+publishDir = "docs"
 
 enableRobotsTXT = true
 
