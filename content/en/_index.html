@@ -4,111 +4,144 @@ linkTitle = "Goldydocs"
 
 +++
 
-{{< blocks/cover title="" image_anchor="center" height="min" color="dark" >}}
-<div class="mx-auto">
+{{< blocks/cover title="" image_anchor="center" height="min" color="dark">}}
+  <div class="mx-auto">
     <div class="col-sm-6 offset-sm-7 card bg-transparent border-0">
-	<div class="text-left">
-		<h1 class="motto">
-			Choose the right with <span class="text-secondary">Elekto</span>
-		</h1>
-	</div>
+      <div class="text-left">
+        <h1 class="motto">
+          Choose the right with <span class="text-secondary">Elekto</span>
+        </h1>
+      </div>
       <div class="card-body pl-0">
         <h3 class="card-title text-left">Simple software for secure online elections.</h3>
         <p class="card-text text-left">
-			<small>
-				Elekto was created as part of an LFX internship for the Kubernetes project by <a href="">Manish Sahani,</a> and is now a CNCF infrastructure project.
-			</small></p>
+          <small>
+            Elekto was created as part of an LFX internship for the Kubernetes project by <a href="">Manish Sahani,</a>
+            and is now a CNCF infrastructure project.
+          </small>
+        </p>
       </div>
     </div>
-  <br/>
-  <div class="card-group">
-    <div class="card bg-primary">
-      <div class="card-body pt-5">
-        <h4 class="card-title">100% GitOps workflow for configuration and election administration</h4>
+    <br />
+    <div class="card-group">
+      <div class="card bg-primary">
+        <div class="card-body pt-5">
+          <h4 class="card-title">100% GitOps workflow for configuration and election administration</h4>
+        </div>
       </div>
-	</div>
-	<div class="card bg-primary">
-		<div class="card-body pt-5">
-		  <h4 class="card-title">100% Oauth-driven workflow for voters (no emails required)</h4>
-		</div>
-	  </div>
-    <div class="card bg-primary">
-      <div class="card-body pt-5">
-        <h4 class="card-title">Preference election voting (starting with Condorcet)</h4>
+      <div class="card bg-primary">
+        <div class="card-body pt-5">
+          <h4 class="card-title">100% Oauth-driven workflow for voters (no emails required)</h4>
+        </div>
       </div>
-	</div>
-	<div class="card bg-secondary">
-		<div class="card-body pt-5">
-		  <h4 class="card-title">Multiple elections for the same organization</h4>
-		</div>
-	  </div>
+      <div class="card bg-primary">
+        <div class="card-body pt-5">
+          <h4 class="card-title">Preference election voting (starting with Condorcet)</h4>
+        </div>
+      </div>
+      <div class="card bg-secondary">
+        <div class="card-body pt-5">
+          <h4 class="card-title">Secret ballots (untraceable back to voter)</h4>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto mt-5">
+      {{< blocks/link-down color="primary">}}
+    </div>
   </div>
-  <div class="mx-auto mt-5">
-    {{< blocks/link-down color="primary" >}}
-  </div>
-</div>
-{{< /blocks/cover >}}
+{{< /blocks/cover>}}
 
 
 {{% blocks/lead color="primary" %}}
-<h1>
-	Elekto is inspired by the long-running CIVS project.
-</h1>
+<h3>
+  Inspired by the long-running CIVS project. Elekto is changing the way to run elections for organisations.
+</h3>
 {{% /blocks/lead %}}
 
-{{< blocks/section color="dark" >}}
-{{% blocks/feature icon="fab fa-slack" title="Join us on Slack!" %}}
-The Goldydocs UI now shows chair size metrics by default.
-
-Please follow this space for updates!
-{{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-
-{{< /blocks/section >}}
-
-
-{{< blocks/section >}}
-<div class="col">
-<h1 class="text-center">This is the second Section</h1>
+<div class="row section--dashboard">
+  <div class="col-md-4 content">
+    <h1 class="features-heading">Run <span class="text-secondary">Multiple</span> elections</h1>
+    <h3 class="mb-4">for the same organization</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus enim similique nostrum est optio
+      provident blanditiis?
+    </p>
+    <h1 class="features-heading"><span class="text-secondary">100% </span> Oauth driven</h1>
+    <h3 class="mb-4">for the same organization</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus enim similique nostrum est optio
+      provident blanditiis?
+    </p>
+  </div>
+  <div class="col image">
+    <img src="dashboard.png" alt="">
+  </div>
 </div>
 
-{{< /blocks/section >}}
+<div class="row section--login">
+  <div class="col-md-7 image">
+    <img src="login.png" width="44%" alt="">
+    <img src="election.png" width="45%" alt="">
+  </div>
+  <div class="col-md-5 content">
+    <h1 class="features-heading"><span class="text-secondary">Preference</span> election voting</h1>
+    <h3 class="mb-4">starting with Condorcet</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus enim similique nostrum est optio
+      provident blanditiis?
+    </p>
+    <h1 class="features-heading"><span class="text-secondary">Responsive</span> UI design</h1>
+    <h3 class="mb-4"></h3>
+    <p class="mb-5">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus enim similique nostrum est optio
+      provident blanditiis?
+    </p>
+  </div>
+
+</div>
+
+{{< blocks/section color="white">}}
+  <div class="col">
+    <h4 class="text-center">
+      <a href="/docs/getting-started/">Get Started</a> with elekto
+    </h4>
+  </div>
+{{< /blocks/section>}}
+
+{{< blocks/section color="primary" >}}
+  {{% blocks/feature icon="fab fa-slack" title="Join us on Slack!" %}}
+  The elekto project
+
+  Please follow this space for updates!
+  {{% /blocks/feature %}}
 
 
-
-{{< blocks/section >}}
-{{% blocks/feature icon="fab fa-app-store-ios" title="Download **from AppStore**" %}}
-Get the Goldydocs app!
-{{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
+  {{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
+  url="https://github.com/elekto-io/elekto" %}}
+  We do a [Pull Request](https://github.com/elekto-io/elekto) contributions workflow on **GitHub**.
+  New users are always welcome!
+  {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/GoHugoIO" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
+  {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
+  For announcement of latest features etc.
+  {{% /blocks/feature %}}
+{{< /blocks/section>}}
 
-
-{{< /blocks/section >}}
+{{< blocks/section color="white" >}}
+  <div class="col-md-3">
+    <h1>Organisations using <span class="text-secondary">elekto</span></h1>
+  </div>
+  <div class="col d-flex">
+    <img class="align-middle" src="/img/logos/k8s-logo.svg" width="200" alt="">
+  </div>
+{{< /blocks/section>}}
 
 {{% blocks/section color="secondary" type="section" %}}
 <div class="row">
   <div class="col">
-    <h1 class="display-3 text-center">Elekto Project is hosted and supported by the CNCF.</h1>
-    <img src="/img/logos/cncf-icon-white.svg" width="75" class="mx-auto d-block"></img>
+    <h1 class="display-3 text-center mb-4">Elekto Project is hosted and supported by the CNCF.</h1>
+    <img src="/img/logos/cncf-color.svg" width="35%" class="mx-auto d-block"></img>
   </div>
 </div>
 {{% /blocks/section %}}

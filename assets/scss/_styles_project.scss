@@ -1,0 +1,97 @@
+.motto {
+    font-size: 80px;
+    line-height: 100%;
+    font-weight: 800;
+}
+
+// #td-cover-block-0
+.td-cover-block {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.features-heading {
+    font-weight: 600; 
+    font-size: 3rem; 
+    line-height: 100%;
+
+    @media screen and (max-width: 720px) and (orientation: portrait) {
+        font-size: 2rem;
+    }
+}
+
+.section--dashboard {
+    overflow: hidden;
+    min-height: 50rem;
+
+    @media screen and (max-width: 720px) and (orientation: portrait) {
+        min-height: 30rem;
+    }
+
+    .content {
+        padding: 8rem 1rem 2rem 9rem;
+        z-index: 1;
+
+        & > p:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+
+
+        @media screen and (max-width: 720px) and (orientation: portrait) {
+            padding: 4rem 2rem 0 2rem;
+
+            & > p:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    
+
+    .image {
+        position: relative;
+
+        & > img {
+            position: absolute; 
+            width: 80rem; 
+            right: -300px; 
+            top: 30px;
+
+            
+        }
+
+        @media screen and (max-width: 800px) and (orientation: portrait) {
+            display: none;
+        }
+    }
+}
+
+.section--login {
+    overflow: hidden;
+
+    @media screen and (max-width: 720px) and (orientation: portrait) {
+
+    }
+
+    & > .content{
+        padding: 2rem 8rem 4rem 1rem;
+
+        & > p:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+
+        @media screen and (max-width: 720px) and (orientation: portrait) {
+            padding: 1rem 2rem 0 2rem;
+
+            & > p:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    
+    .image {
+        padding: 0 1rem 0 8.5rem;
+
+        @media screen and (max-width: 800px) and (orientation: portrait) {
+            display: none;
+        }
+    }
+}
