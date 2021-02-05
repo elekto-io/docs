@@ -3,33 +3,90 @@ title: "Getting Started"
 linkTitle: "Getting Started"
 weight: 2
 description: >
-  What does your user need to know to try your project?
+  Start using elekto for your organisation.
 ---
+#### Create a development environment
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+The application is written in `python` using `flask` and `sqlalchemy`. This repository ships a `requirements.txt` and  a `environment.yml` for conda users.
 
-Information in this section helps your user try your project themselves.
+```bash
+# Installation with pip 
+pip install -r requirements.txt
 
-* What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
+# Installation with Conda
+conda env create -f environment.yml && conda activate elekto
+```
 
-* Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.
+#### Setup env variables
 
-Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.
+The repository has a `.env.example` file which can be used as a template for `.env` file, update the environment file after copying from `.env.example`.
 
-## Prerequisites
+```bash
+# create a new .env file from .env.example
+cp .env.example .env
+```
 
-Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?
+Set the basic information about the application in the upper section
+```bash
+APP_NAME=k8s.elections     # set the name of the application
+APP_ENV=development        # development | production   
+APP_KEY=                   # random secret key (!! important !!)
+APP_DEBUG=True             # True | False (production)
+APP_URL=http://localhost   # Url where the application is hosted
+APP_PORT=5000              # Default Running port for development 
+APP_HOST=localhost         # Default Host for developmemt 
+```
 
-## Installation
+Update the database credentials, 
+```bash
+DB_CONNECTION=mysql        # Mysql is only supported 
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=name          
+DB_USERNAME=user
+DB_PASSWORD=password
+```
 
-Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?
+Update the meta repository info
+```bash
+META_REPO=https://github.com/elekto-io/elekto.meta.test.git
+META_DEPLOYMENT=local
+META_PATH=meta
+META_BRANCH=main
+META_SECRET=db5a951969c379e75d0bf15ad6ff8b4a36fbeb02  # same as webhook of the same meta repository
+```
 
-## Setup
+Update the Oauth info, create an github oauth app if already not created.
+```bash
+GITHUB_REDIRECT=/oauth/github/callback
+GITHUB_CLIENT_ID=d79f002c1d2e3cf20521
+GITHUB_CLIENT_SECRET=2f64fff6612c46f87314ad5bb81d05c8fd29c561
+```
 
-Is there any initial setup users need to do after installation to try your project?
+#### Migrate and Sync DB with Meta
 
-## Try it out!
+The `console` script in the repository is used to perform all the table creations and syncing of the meta. 
 
-Can your users test their installation, for example by running a command or deploying a Hello World example?
+```bash
+# to migrate the database from command line 
+python console --migrate 
+```
+
+To sync the database with the meta files 
+
+```bash
+# to the sync the database with the meta
+python console --sync
+```
+
+#### Run the application Server locally 
+
+The flask server will start on `5000` by default but can be changed using `--port` option.
+
+```bash
+# to run the server on default configs
+python console --run
+
+# to change host and port
+python console --port 8080 --host 0.0.0.0 --run
+```

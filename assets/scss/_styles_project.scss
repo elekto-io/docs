@@ -51,11 +51,13 @@
 
         & > img {
             position: absolute; 
-            width: 80rem; 
+            width: 140%; 
             right: -300px; 
             top: 30px;
 
-            
+            @media screen and (min-width: 1440px) and (orientation: portrait) {
+                width: 100%;
+            }
         }
 
         @media screen and (max-width: 800px) and (orientation: portrait) {
@@ -84,6 +86,10 @@
             & > p:not(:last-child) {
                 margin-bottom: 2rem;
             }
+
+            & > p:last-child {
+                margin-bottom: 0;
+            }
         }
     }
     
@@ -92,6 +98,17 @@
 
         @media screen and (max-width: 800px) and (orientation: portrait) {
             display: none;
+        }
+    }
+}
+
+.icon {
+    &-github {
+        font-size: 10rem;
+        margin-inline-end: 1rem;
+
+        @media screen and (max-width: 800px) and (orientation: portrait) {
+            font-size: 7rem;
         }
     }
 }
