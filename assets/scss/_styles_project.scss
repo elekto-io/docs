@@ -5,13 +5,25 @@
 }
 
 // #td-cover-block-0
-.td-cover-block {
-    background-color: rgba(0, 0, 0, 0.7);
+//.td-cover-block {
+    //background-color: rgba(0, 0, 0, 0.7);
+//}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .features-heading {
-    font-weight: 600; 
-    font-size: 3rem; 
+    font-weight: 600;
+    font-size: 3rem;
     line-height: 100%;
 
     @media screen and (max-width: 720px) and (orientation: portrait) {
@@ -44,15 +56,15 @@
             }
         }
     }
-    
+
 
     .image {
         position: relative;
 
         & > img {
-            position: absolute; 
-            width: 140%; 
-            right: -300px; 
+            position: absolute;
+            width: 140%;
+            right: -300px;
             top: 30px;
 
             @media screen and (min-width: 1440px) and (orientation: portrait) {
@@ -92,7 +104,7 @@
             }
         }
     }
-    
+
     .image {
         padding: 0 1rem 0 8.5rem;
 
