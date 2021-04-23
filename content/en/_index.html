@@ -8,7 +8,7 @@ linkTitle = "Goldydocs"
   <div class="mx-auto">
     <div class="col-sm-12 card bg-transparent border-0">
       <div class="text-center">
-        <img src="banner.png" alt="" srcset="">
+        <img class="banner" src="banner.png" alt="" srcset="">
         <p>
             Elekto was created as part of an LFX internship for the Kubernetes project by <a href="https://github.com/kalkayan">Manish Sahani,</a>
             and is now a CNCF infrastructure project.
@@ -133,3 +133,17 @@ linkTitle = "Goldydocs"
   </div>
 </div>
 {{% /blocks/section %}}
+
+<script>
+    let scrollpos = window.scrollY
+    const header = document.querySelector("nav")
+
+    const add_class_on_scroll = () => header.classList.add("td-navbar-scroll")
+    const remove_class_on_scroll = () => header.classList.remove("td-navbar-scroll")
+
+    window.addEventListener('scroll', function() {
+        scrollpos = window.scrollY;
+        if (scrollpos >= '1100') { add_class_on_scroll() }
+        else { remove_class_on_scroll() }
+    })
+</script>

@@ -1,24 +1,21 @@
-.motto {
-    font-size: 80px;
-    line-height: 100%;
-    font-weight: 800;
+.banner {
+    width: 90%;
 }
 
-// #td-cover-block-0
-//.td-cover-block {
-    //background-color: rgba(0, 0, 0, 0.7);
-//}
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.td-navbar-scroll {
+    background-color: $primary !important;
+    animation: all ease-in 1s;
+}
+.navbar-brand {
+    & > .navbar-logo > svg {
+        width: 100px;
+        height: 50px;
+    }
+
+    & span:nth-child(2) {
+        display: none;
+    }
 }
 
 .features-heading {
@@ -47,7 +44,6 @@
             margin-bottom: 5rem;
         }
 
-
         @media screen and (max-width: 720px) and (orientation: portrait) {
             padding: 4rem 2rem 0 2rem;
 
@@ -56,7 +52,6 @@
             }
         }
     }
-
 
     .image {
         position: relative;
@@ -82,10 +77,9 @@
     overflow: hidden;
 
     @media screen and (max-width: 720px) and (orientation: portrait) {
-
     }
 
-    & > .content{
+    & > .content {
         padding: 2rem 8rem 4rem 1rem;
 
         & > p:not(:last-child) {
