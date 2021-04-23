@@ -1,73 +1,62 @@
-# Docsy Example
+# Elekto Documentation
 
-[Docsy](https://github.com/google/docsy) is a Hugo theme for technical documentation sites, providing easy site navigation, structure, and more. This **Docsy Example Project** uses the Docsy theme, as well as providing a skeleton documentation structure for you to use. You can either copy this project and edit it with your own content, or use the theme in your projects like any other [Hugo theme](https://gohugo.io/themes/installing-and-using-themes/).
+Welcome to the source file repository for our documentation on [elekto.io](https://elekto.io/).
 
-The theme is included in this project as a Git submodule:
+## Introduction 
 
-```bash
-▶ git submodule
- a053131a4ebf6a59e4e8834a42368e248d98c01d themes/docsy (heads/master)
-```
+The Elekto documenation website is built with [hugo](https://gohugo.io/) and currently uses [docsy](https://www.docsy.dev/) as its theme. 
 
-This Docsy Example Project is hosted at [https://example.docsy.dev/](https://example.docsy.dev/).
+## Run website locally
 
-You can find detailed theme instructions in the Docsy user guide: https://docsy.dev/docs/
-
-This is not an officially supported Google product. This project is currently maintained.
-
-## Using the Docsy Example Project as a template
-
-A simple way to get started is to use this project as a template, which gives you a site project that is set up and ready to use. To do this: 
-
-1. Click **Use this template**.
-
-2. Select a name for your new project and click **Create repository from template**.
-
-3. Make your own local working copy of your new repo using git clone, replacing https://github.com/my/example.git with your repo’s web URL:
+Clone this repo (or your fork) and its submodules by using --recurse-submodules option, run:
 
 ```bash
-git clone --recurse-submodules --depth 1 https://github.com/my/example.git
+git clone --recurse-submodules https://github.com/elekto-io/docs.git
 ```
 
-You can now edit your local versions of the site’s source files.
-
-If you want to do SCSS edits and want to publish these, you need to install `PostCSS`
+If you accidentally cloned this repository without `--recurse-submodules` flag, you can do the following to clone the submodules:
 
 ```bash
-npm install
+cd docs
+git submodule init
+git submodule update
+cd themes/docsy
+git submodule init
+git submodule update
 ```
 
-## Running the website locally
+**[Optional]** If you want to write CSS/SCSS, you need to install `postcss-cli` and `autoprefixer`, run an `npm install` to install the dependencies from `package.json`. 
 
-Once you've cloned or copied the site repo, from the repo root folder, run:
+Finally, use hugo commands to start building up the site, run the following
 
-```
+```bash
+# Start the server with live-reloading and with drafts
+hugo -D server
+
+# Start the server with live-reloading and without drafts
 hugo server
 ```
 
 ## Running a container locally
 
-You can run docsy-example inside a [Docker](ihttps://docs.docker.com/)
-container, the container runs with a volume bound to the `docsy-example`
+You can run this website inside a [Docker](ihttps://docs.docker.com/)
+container, the container runs with a volume bound to the `docs`
 folder. This approach doesn't require you to install any dependencies other
 than Docker.
 
-1. Build the docker image 
+Build the docker image 
 
 ```bash
-docker build -f dev.Dockerfile -t docsy-example-dev:latest .
+docker build -f dev.Dockerfile -t elekto-docs:latest .  
 ```
 
-1. Run the built image
+Run the built image
 
 ```bash
-docker run --publish 1313:1313 --detach --mount src="$(pwd)",target=/home/docsy/app,type=bind docsy-example-dev:latest
+docker run --publish 1313:1313 --detach --mount src="$(pwd)",target=/home/docsy/app,type=bind elekto-docs:latest 
 ```
 
-Open your web browser and type `http://localhost:1313` in your navigation bar,
-This opens a local instance of the docsy-example homepage. You can now make
-changes to the docsy example and those changes will immediately show up in your
-browser after you save.
+Open your web browser and type `http://localhost:1313` in your navigation bar, This opens a local instance of the elekto documentation's homepage. You can now make changes to the docsy example and those changes will immediately show up in your browser after you save.
 
 To stop the container, first identify the container ID with:
 
@@ -87,3 +76,30 @@ To delete the container run:
 ```
 docker container rm [container_id]
 ```
+
+## Deploy you changes
+
+While the above section describes how the content is built locally, [https://elekto.io/](https://elekto.io/) is built and served by [github-pages]() on github.
+
+Save your local changes by commiting them and then use the `deploy.sh` script to do the deployment.
+
+```bash
+./deploy.sh
+```
+
+
+## Contributing
+
+We're excited that you're interested in contributing to the Elekto documentation! Check out the resources below to get started.
+
+Checkout, [How to Contribute](CONTRIBUTING.md) for getting started on how to contribute and understanding the outlines the roles for Docs contributors.
+
+## Getting Help
+
+The elekto project is maintained by [Manish Sahani](https://github.com/kalkayan/) and [Josh Berkus](https://github.com/jberkus), Reach out to us one way or another.
+
+## Support
+
+Your help and feedback is always welcome!
+
+If you find an issue let us know, either by clicking the Create Issue on any of the website pages, or by directly opening an issue [here](https://github.com/elekto-io/docs/issues/new) in the repo.
