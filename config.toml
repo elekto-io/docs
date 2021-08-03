@@ -1,7 +1,7 @@
 title = "Elekto"
-baseURL = "https://elekto.io"
+baseURL = "https://elekto.dev"
 disableKinds = ["taxonomy", "taxonomyTerm"]
-publishDir = "docs"
+publishDir = "punlic"
 
 enableRobotsTXT = true
 
@@ -182,4 +182,3 @@ enable = false
 	url = "https://example.org/mail"
 	icon = "fa fa-envelope"
         desc = "Discuss development issues around the project"
-
