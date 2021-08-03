@@ -3,6 +3,7 @@
 # Default build settings
 [build]
   command = "cd themes/docsy && git submodule update -f --init && cd ../.. && hugo"
+  publish = "public"
 
 # "production" environment specific build settings
 [build.environment]
