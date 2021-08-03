@@ -2,11 +2,10 @@
 
 # Default build settings
 [build]
-  command = "cd themes/docsy && git submodule update -f --init && cd ../.. && hugo"
   publish = "public"
+  command = "cd themes/docsy && git submodule update -f --init && cd ../.. && hugo"
 
 # "production" environment specific build settings
 [build.environment]
-  HUGO_BASEURL = "https://elekto.dev"
   HUGO_VERSION = "0.82.0"
   HUGO_ENV = "production"
