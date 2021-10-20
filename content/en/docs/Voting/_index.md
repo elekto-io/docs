@@ -102,9 +102,9 @@ When you have finished ranking candidates, you may optionally enter a passphrase
 
 ## Re-Casting Your Vote
 
-Elekto allows you to revoke and re-cast your vote for as long as the election is open.  This way, you can vote when it opens, and update your vote if you learn new information about candidates.
+If permitted by your administrator, Elekto allows you to revoke and re-cast your vote for as long as the election is open.  This way, you can vote when it opens, and update your vote if you learn new information about candidates.  If not permitted, you will not see the Revoke option.
 
-![re-cast vote interface](recast.png)
+![revoke vote interface](revoke.png)
 
 In order to ensure that this doesn't compromise the privacy of your ballot, though, the link between your identity and ballot are encrypted with a passphrase you supplied when you voted (see above).  As such, you must enter that passphrase in the field in the election UI in order to revoke your vote.  If you didn't set one, or cannot remember it, you cannot re-cast your vote.  Administrators will not be able to help.
 
