@@ -3,8 +3,10 @@ title: "Installation"
 linkTitle: "Installation"
 weight: 2
 description: >
-  Full installation documentation
+  Full server installation documentation
 ---
+
+This guide walks you through installing Elekto by hand on a server or VM.
 
 # Installation Concepts
 
@@ -16,7 +18,7 @@ For Elekto to run in production, you need the following small application stack:
 * A GitHub repository
 * An Oauth authentication source
 
-Elekto can be installed either as a native application, or as a container.
+Elekto can be installed either as a native application, or as a container.  The instructions below cover installation as a native application. For installation in a container, see [Kubernetes installation]({{< relref "kubernetes.md" >}})
 
 ## Installing Requirements and Python Binaries
 

@@ -6,9 +6,9 @@ description: >
   Reasons behind the Elekto design
 ---
 
-Elekto was originally built to support the Kubernetes Steering Committee elections, supporting the existing workflow of that community.  It's also intended to avoid several chronic issues with usage of the CIVS election system.
+Elekto was originally built to support the [Kubernetes Steering Committee elections](https://github.com/kubernetes/steering/blob/master/elections.md), supporting the existing workflow of that community.  It's also intended to avoid several chronic issues with usage of the [CIVS election system](https://civs1.civs.us/).
 
-Before adopting, or contributing to Elekto, please read these principles as the project is very unlikely to accept features which transgress any of them.
+Before adopting, or contributing to Elekto, please read these principles as they give you a broad idea of what kinds of features and changes the project is interested in or likely to implement.
 
 ## Preference Elections for Small Organizations
 
@@ -22,7 +22,7 @@ Elekto is not designed to support public governmental elections, or any election
 
 The project is designed to be an extremely simple, lightweight web application.  Simplicity makes it easy to install and support in a variety of environments and platforms. This means that organizations can run Elekto as a microservice, on their own, instead of requiring a paid, hosted service.
 
-Simplicity also makes Elekto easy to fork and modify, as well as contribute to.  We chose [Flask]() as our framework with this in mind.  It's also why our container image is a simple, unified image.
+Simplicity also makes Elekto easy to fork and modify, as well as contribute to.  We chose [Flask](https://flask.palletsprojects.com/en/2.0.x/) as our framework with this in mind.  It's also why our container image is a simple, unified image.
 
 This does mean that changes that would substantially increase the complexity of Elekto -- such as a theme engine or porting it to Django or decomposing it into a half-dozen scalable subservices -- are unlikely to be accepted in the main project.
 
