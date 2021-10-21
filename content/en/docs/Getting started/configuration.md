@@ -32,9 +32,11 @@ You must set up an "Oauth Application" that Elekto can use.  In GitHub, this is 
 
 The Oauth App must have the following settings:
 
-*
+* Application Name: whatever you've named your Elekto instance
+* Homepage URL: the url of your Elekto instance
+* Authorization Callback URL: https://your.elekto.domain/oauth/github/callback  (note that this can be changed in ENV)
 
-Having configured this, you can populate GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET in Elekto's runtime environment.
+Once you create the Oauth App, GitHub will create a ClientID for it, which you populate in GITHUB_CLIENT_ID in ENV.  You then create a new Oauth secret under the app and copy the value for that, and that gets populated in GITHUB_CLIENT_SECRET.
 
 #### GitHub Repository Webhook
 
@@ -42,13 +44,14 @@ In order to receive changes from the repo, you need to add a webhook that pushes
 
 The Webhook should have the following settings:
 
-* Push webhook
-* JSON data format
-* Use TLS
-* 
+* Payload URL: https://your.election.domain/v1/webhooks/meta/sync
+* Content Type: application/json
 * Shared Secret set to the same as META_SECRET
+* Enable SSL Verification
+* Just The Push Event
+* Check "Active" to turn it on
 
-This last "secret" is an arbitrary string that authenticates the push to the Elekto server.  It can be any string, such as one created by a password generator or a passphrase you like.  This string then gets set in META_SECRET. 
+This "secret" is an arbitrary string that authenticates the push to the Elekto server.  It can be any string, such as one created by a password generator or a passphrase you like.  This string then gets set in META_SECRET. 
 
 ## The Environment File
 
@@ -167,7 +170,7 @@ Example: `https://github.com/kalkayan/k8s.elections.meta.git`
 
 **ELECTION_DIR**
 
-*Required* Directory, relative to the Git repository root, containing the set of election subdirectories.  Can be an arbitrarily deep path.  Do not use a leading or trailing `/`.
+*Required* Directory, relative to the Git repository root, containing the set of election subdirectories. Must be a parent directory. Can be an arbitrarily deep path.  Do not use a leading or trailing `/`.
 
 Example: `elections`, `gov/steering/elections`
 
