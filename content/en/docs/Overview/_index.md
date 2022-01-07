@@ -3,9 +3,11 @@ title: "Overview"
 linkTitle: "Overview"
 weight: 1
 description: >
-  Understand the working of elekto.
+  Overview of Elekto Project.
 ---
 
-The application requires a [meta]() repository to store election meta files. The meta repository is the single source of truth for the application and is managed by gitops, all the tasks like creating an election, adding/removing voters to the list are managed by raising specific pull requests in the meta repository. See our detailed instruction [docs](/docs/README.md)
+The Elekto Project is a [CNCF](https://cncf.io) accessory project which develops online voting software intended for use by the CNCF itself and by open source cloud native projects.
 
-![architecture.png](arch.png)
+Originally written for the needs of the Kubernetes and OpenTelemetry projects, the Elekto software is designed to support online preference voting for open source projects.  Based on a GitOps workflow and Condorcet election accounting, Elekto supports your steering committee and TOC elections, committee decision making, and anywhere else a formal project vote is required among a small pool of candidates or options.
+
+Read on to learn more about Elekto's [goals]({{< relref "goals.md" >}}) and [architecture]({{< relref "architecture.md" >}}).
