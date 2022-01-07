@@ -28,25 +28,25 @@ Currently, the only Oauth provider offered is GitHub.  Contributions of addition
 
 #### GitHub Oauth
 
-You must set up an "Oauth Application" that Elekto can use.  In GitHub, this is under Settings-->Developer Tools-->Oauth Applications.  Note that Oauth Apps are belong to *accounts* rather than organizations, so you'll want to set up an account with shared access in your infra team. We also recommend setting up a separate Oauth App for Elekto rather than re-using one created for other purposes, and giving each Elekto instance its own secret key.
+You must set up an "Oauth Application" that Elekto can use.  In GitHub, this is under Settings-->Developer Tools-->Oauth Applications.  Note that Oauth Apps are belong to *accounts* rather than organizations, so you'll want to set up an account with shared access in your infra team. We also recommend setting up a separate Oauth App for Elekto rather than re-using ones created for other purposes, and giving each Elekto instance its own secret key.
 
 The Oauth App must have the following settings:
 
 * Application Name: whatever you've named your Elekto instance
 * Homepage URL: the url of your Elekto instance
-* Authorization Callback URL: https://your.elekto.domain/oauth/github/callback  (note that this can be changed in ENV)
+* Authorization Callback URL: `https://your.elekto.domain/oauth/github/callback`  (note that this can be changed in ENV)
 
 Once you create the Oauth App, GitHub will create a ClientID for it, which you populate in GITHUB_CLIENT_ID in ENV.  You then create a new Oauth secret under the app and copy the value for that, and that gets populated in GITHUB_CLIENT_SECRET.
 
 #### GitHub Repository Webhook
 
-In order to receive changes from the repo, you need to add a webhook that pushes changes whenever you merge.  Webhooks are under "settings" for the individual repository (which also means you must be a repo onwer).  
+To receive changes from the repo, you need to add a webhook that pushes changes whenever you merge.  Webhooks are under "settings" for the individual repository (which also means you must be a repo owner).  
 
 The Webhook should have the following settings:
 
-* Payload URL: https://your.election.domain/v1/webhooks/meta/sync
-* Content Type: application/json
-* Shared Secret set to the same as META_SECRET
+* Payload URL: `https://your.election.domain/v1/webhooks/meta/sync`
+* Content type: application/json
+* Secret set to the same as META_SECRET
 * Enable SSL Verification
 * Just The Push Event
 * Check "Active" to turn it on
@@ -57,12 +57,12 @@ This "secret" is an arbitrary string that authenticates the push to the Elekto s
 
 Elekto is designed to accept its runtime configuration as ENV variables in its shell environment.  A sample `.env.example` file can be found in the base directory of the Elekto source.  These ENV configuration variables are not expected to change frequently, or at all, for any particular running Elekto instance.  Changing them generally requires restarting Elekto.
 
-All of these env variables need to be set before starting Elekto as a uwsgi application, or even in developer mode; without them, Elekto will error out and refuse to start. You can set this up however you please:
+All of these env variables need to be set before starting Elekto as a uWSGI application, or even in developer mode; without them, Elekto will error out and refuse to start. You can set this up however you please:
 
 * as the `.bashrc` for the elekto application user
 * as ENV variables for a container running Elekto
 * preloaded in a systemd unit file
-* injected through a ConfigMap and a Secret into an Kubernetes pod
+* injected through a ConfigMap and a Secret into a Kubernetes pod
 
 Since we use ENV for Elekto configuration, this does mean that Elekto must be launched under a shell.
 
@@ -86,11 +86,9 @@ Example: `production` or `development`
 
 **APP_KEY**
 
-*Optional* Seed string for Flask encryption if running Flask in standalone mode.  Not required if fronting with an HTTPS webserver.
+*Optional* Encryption seed for application cookies.  Deprecated; will be set automatically by Elekto in the future, but for now set it to a random 8byte+ value.
 
-Example: ``
-
-FIXME
+Example: `2400229255`
 
 **APP_DEBUG**
 
@@ -100,13 +98,13 @@ Example: `True` or `False`
 
 **APP_URL**
 
-*Optional* URL of the Elekto instance.  Used by some uwsgi and/or Nginx configurations.  Not used internally by Elekto.
+*Optional* URL of the Elekto instance.  Used by some uWSGI and/or Nginx configurations.  Not used internally by Elekto.
 
 Example: `http://elections.knative.dev`
 
 **APP_PORT**
 
-*Optional* Used in some uwsgi start scripts, and when running Flask in standalone mode.  Port on which to serve Elekto.
+*Optional* Used in some uWSGI start scripts, and when running Flask in standalone mode.  Port on which to serve Elekto.
 
 Example: `5000`
 
@@ -118,7 +116,7 @@ Example: `localhost`
 
 **APP_CONNECT**
 
-*Optional* Whether to serve uwsgi over HTTP or via a local unix socket.  Used by some startup scripts; see `entrypoint.sh` for an example.  
+*Optional* Whether to serve uWSGI over HTTP or via a local Unix socket.  Used by some startup scripts; see `entrypoint.sh` for an example.  
 
 Example: `http` or `socket`
 
@@ -126,7 +124,7 @@ Example: `http` or `socket`
 
 **DB_CONNECTION**
 
-*Required* Which database connection type to use.  Currently only postgresql, mysql, and sqlite are supported.  
+*Required* Which database connection type to use.  Currently only PostgreSQL, MySQL, and SQLite backends are supported.  
 
 Example: `postgresql`, `mysql`, or `sqlite`
 
@@ -182,7 +180,7 @@ Example: `local`, `sidecar`
 
 **META_PATH**
 
-*Required* Local file location at which to store a clone of the election data repository.  This directory will be created by Elekto at sync time, so the application must have the ability to write to the parent directory.  May be absolute or relative; if relative, will be under the eletko source directory.  Defaults to `meta`.  For containers, a directory under `/tmp` is recommended to make sure the location is writeable.
+*Required* Local file location at which to store a clone of the election data repository.  This directory will be created by Elekto at sync time, so the application must have the ability to write to the parent directory.  The directory may be absolute or relative; if it is relative, it will be under the Eletko source directory.  Otherwise it defaults to `meta`.  For containers, a directory under `/tmp` is recommended to make sure the location is writeable.
 
 Example: `meta`, `/tmp/meta`
 
@@ -200,7 +198,7 @@ Example: `92a488d11c0d27bbfea0a97e3332e08a`
 
 #### Oauth Settings
 
-At this time, there are only settings available for GitHub because other Oauth sources haven't been implemented.  When other sources get added to Elekto, each will get their own configuration variables.
+At this time, there are only settings available for GitHub because other Oauth sources haven't been implemented.  When other sources get added to Elekto, each will get its own configuration variables.
 
 **GITHUB_REDIRECT**
 

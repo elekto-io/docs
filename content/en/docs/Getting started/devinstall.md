@@ -10,7 +10,7 @@ This guide will help you create a development installation of Elekto on your lap
 
 ## Create a development environment
 
-The application is written in `python` using `flask` and `sqlalchemy`. This repository ships a `requirements.txt` and  a `environment.yml` for conda users.
+The application is written in Python using Flask and SQLAlchemy. This repository ships a `requirements.txt` and an `environment.yml` for conda users.
 
 ```bash
 # Installation with pip 
@@ -59,7 +59,8 @@ META_BRANCH=main
 META_SECRET=db5a951969c379e75d0bf15ad6ff8b4a36fbeb02  # same as webhook of the same meta repository
 ```
 
-Update the Oauth info, create an github oauth app if already not created.
+Update the Oauth info, create a GitHub Oauth app if already not created.
+
 ```bash
 GITHUB_REDIRECT=/oauth/github/callback
 GITHUB_CLIENT_ID=d79f002c1d2e3cf20521
@@ -68,10 +69,10 @@ GITHUB_CLIENT_SECRET=2f64fff6612c46f87314ad5bb81d05c8fd29c561
 
 #### Migrate and Sync DB with Meta
 
-The `console` script in the repository is used to perform all the table creations and syncing of the meta. 
+The `console` script in the repository is used to perform all the table creations and syncing of the meta files. 
 
 ```bash
-# to migrate the database from command line 
+# to migrate the database from the command line 
 python console --migrate 
 ```
 

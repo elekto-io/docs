@@ -6,11 +6,7 @@ description: >
   Start using elekto for your organisation.
 ---
 
-Elekto is a DIY service, so in order to start using it, you're going to have to install it.
-
-Please see the following guides:
-
-Ways to install Elekto, any of:
+Elekto is a DIY service, so in order to start using it, you're going to have to install it:
 
 * [Developer Installation]({{< relref "devinstall.md" >}})
 * [Server Installation]({{< relref "installation.md" >}})
