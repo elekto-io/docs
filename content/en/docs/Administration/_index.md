@@ -8,9 +8,9 @@ description: >
 
 Administering elections in Elekto is done through pushes of structured files to a GitHub repository.  See the [configuration guide]({{< ref "/Configuration" >}}) for how to configure the link to the repository.  This guide outlines how the Election Administrators run an individual election.  There are three parts to this:
 
-1. [Creating an election]({{ relref . "creating.md"}})
-2. [Running an election]({{ relref "running.md"}})
-3. [Concluding an election]({{ relref "concluding.md"}})
+1. [Creating an election]({{< relref "creating.md" >}})
+2. [Running an election]({{< relref "running.md" >}})
+3. [Concluding an election]({{< relref "concluding.md" >}})
 
 ## GitOps and Administration
 
