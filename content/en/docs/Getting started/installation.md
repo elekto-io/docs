@@ -57,6 +57,15 @@ Database requirements are very light, so it is completely feasible to run the da
 
 The Elekto database user needs to have permission to create tables. The database must be configured with user/password login.  Other forms of authentication are not yet supported.
 
+Here's an example of doing this on PostgreSQL:
+
+```
+postgres=# create role elekto with login password 'TEST';
+CREATE ROLE
+postgres=# create database elekto owner elekto;
+CREATE DATABASE
+```
+
 The Elekto application will not run if the database is unavailable. The ballot data contained in the database is not stored anywhere else, and as such is unrecoverable if the database is lost. For this reason, it is up to the administrator to set up and manage backups and high availability.  This is particularly a concern for SQLite, which is an embedded database; you will need to set up cron jobs on the server to back this up.
 
 ## Web Server
