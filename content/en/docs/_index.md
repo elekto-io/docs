@@ -19,3 +19,5 @@ Elekto was designed to support the following:
 - Multiple elections for the same organization
 - Responsive web design
 - Secret ballot voting
+
+This set of documentation covers Elekto version 0.6.X.

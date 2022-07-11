@@ -6,7 +6,7 @@ description: >
   Guide for running elections using Elekto.
 ---
 
-Administering elections in Elekto is done through pushes of structured files to a GitHub repository.  See the [configuration guide]({{< ref "/Configuration" >}}) for how to configure the link to the repository.  This guide outlines how the Election Administrators run an individual election.  There are three parts to this:
+Administering elections in Elekto is done through pushes of structured files to a GitHub repository.  See the [configuration guide]({{< ref "/docs/Setup/configuration.md" >}}) for how to configure the link to the repository.  This guide outlines how the Election Administrators run an individual election.  There are three parts to this:
 
 1. [Creating an election]({{< relref "creating.md" >}})
 2. [Running an election]({{< relref "running.md" >}})

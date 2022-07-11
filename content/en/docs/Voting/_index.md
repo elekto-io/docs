@@ -100,15 +100,15 @@ You are allowed to "tie" two candidates, giving them the same number ranking, if
 
 When you have finished ranking candidates, you may optionally enter a passphrase that will allow you to re-cast your vote.  This passphrase is used to encrypt the link between your account and your vote, so that the Election Officers are unable to eavesdrop on your specific ballot. If you enter a passphrase, you need to remember it or write it down because it is not retrievable via Elekto.  If you know that there is no chance you will want to re-do your ballot before the election is over, then you can leave the passphrase empty.
 
-## Re-Casting Your Vote
+## Reviewing and Re-Casting Your Vote
 
-If permitted by your administrator, Elekto allows you to revoke and re-cast your vote for as long as the election is open.  This way, you can vote when it opens, and update your vote if you learn new information about candidates.  If not permitted, you will not see the Revoke option.
+If permitted by your administrator, Elekto allows you to review, revoke and re-cast your vote for as long as the election is open.  This way, you can vote when it opens, and update your vote if you learn new information about candidates.  If not permitted, you will not see the View option.
 
-![revoke vote interface](revoke.png)
+In order to ensure that this doesn't compromise the privacy of your ballot, though, the link between your identity and ballot are encrypted with a passphrase you supplied when you voted (see above).  As such, you must enter that passphrase in the field in the election UI in order to review your vote.  If you didn't set one, or cannot remember it, you cannot re-cast your vote.  Administrators will not be able to help.
 
-In order to ensure that this doesn't compromise the privacy of your ballot, though, the link between your identity and ballot are encrypted with a passphrase you supplied when you voted (see above).  As such, you must enter that passphrase in the field in the election UI in order to revoke your vote.  If you didn't set one, or cannot remember it, you cannot re-cast your vote.  Administrators will not be able to help.
+If you enter your passphrase, and click "View", and you will be presented with a read-only view of your ballot. You can then check if the ballot still matches how you wish to vote.  
 
-If you enter your passphrase, and click "Revoke", your original ballot will be deleted.  You can then select "vote" in order to cast your ballot again.
+If it does not, you can revoke your ballot from the View screen.  Simply enter your passphrase again, and then press "Revoke".  Your original ballot will be deleted.  You can then select "vote" in order to cast your ballot again.  Note that, if you revoke your ballot and do not vote again, you are canceling your vote in that election.
 
 ## Checking the Results
 

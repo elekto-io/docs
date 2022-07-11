@@ -1,7 +1,7 @@
 ---
 title: "Configuration"
 linkTitle: "Configuration"
-weight: 2
+weight: 3
 description: >
   Setting up and configuring Elekto for operation
 ---
@@ -86,7 +86,9 @@ Example: `production` or `development`
 
 **APP_KEY**
 
-*Optional* Encryption seed for application cookies.  Deprecated; will be set automatically by Elekto in the future, but for now set it to a random 8byte+ value.
+*Optional* Encryption seed for application cookies.  Most users should leave blank, in which case it will be set automatically as a 
+random 8-byte key by the startup code.  Set manually to an 8-16 character key if you need to run multiple Elekto instances for the
+same organization.
 
 Example: `2400229255`
 
@@ -119,6 +121,12 @@ Example: `localhost`
 *Optional* Whether to serve uWSGI over HTTP or via a local Unix socket.  Used by some startup scripts; see `entrypoint.sh` for an example.  
 
 Example: `http` or `socket`
+
+**MIN_PASSCODE_LENGTH**
+
+*Optional*: Integer. Minimum length for a voter-ballot passphrase in order to deter hacking. Set to 6 if left blank.
+
+Example: `8`
 
 #### Database Connection
 
