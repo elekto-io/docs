@@ -1,6 +1,6 @@
 ---
-title: "Getting Started"
-linkTitle: "Getting Started"
+title: "Installation and Setup"
+linkTitle: "Installation"
 weight: 2
 description: >
   Start using elekto for your organisation.

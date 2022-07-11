@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Installation"
 linkTitle: "Kubernetes Installation"
-weight: 2
+weight: 4
 description: >
   Installing Elekto on Kubernetes
 ---
