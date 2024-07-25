@@ -24,7 +24,7 @@ How election Administrators are selected is up to the organization running the e
 
 This YAML file is the main file that creates and configures an election.  It contains multiple configuration variables, most of which can be changed at multiple times during the election. This file is required for the election to be recognized by Elekto, and if it has errors the election will not appear in the Elekto UI.
 
-See the sample elections in [elekto.meta.test]() for examples of these files.
+See the sample elections in [elekto.meta.test](https://github.com/elekto-io/elekto.meta.test/tree/main/elections) for examples of these files.
 
 ### election.yaml variables
 
