@@ -101,9 +101,9 @@ version = "0.0"
 url_latest_version = "https://eleko.io"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/elekto-io/docs"
+github_repo = "https://github.com/elekto-dev/docs"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/elekto-io/docs"
+github_project_repo = "https://github.com/elekto-dev/docs"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
@@ -153,7 +153,7 @@ enable = false
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/elekto-io/elekto"
+	url = "https://github.com/elekto-dev/elekto"
 	icon = "fab fa-github"
         desc = "Development takes place here!"
 [[params.links.developer]]
@@ -163,6 +163,6 @@ enable = false
         desc = "Project chat on channel #elekto"
 [[params.links.user]]
 	name = "GitHub Issues"
-	url = "https://github.com/elekto-io/elekto/issues"
+	url = "https://github.com/elekto-dev/elekto/issues"
 	icon = "fab fa-github"
         desc = "Having trouble? File an issue on Github"

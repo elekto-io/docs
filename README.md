@@ -11,7 +11,7 @@ The Elekto documenation website is built with [hugo](https://gohugo.io/) and cur
 Clone this repo (or your fork) and its submodules by using --recurse-submodules option, run:
 
 ```bash
-git clone --recurse-submodules https://github.com/elekto-io/docs.git
+git clone --recurse-submodules https://github.com/elekto-dev/docs.git
 ```
 
 If you accidentally cloned this repository without `--recurse-submodules` flag, you can do the following to clone the submodules:
@@ -102,4 +102,4 @@ The elekto project is maintained by [Manish Sahani](https://github.com/kalkayan/
 
 Your help and feedback is always welcome!
 
-If you find an issue let us know, either by clicking the Create Issue on any of the website pages, or by directly opening an issue [here](https://github.com/elekto-io/docs/issues/new) in the repo.
+If you find an issue let us know, either by clicking the Create Issue on any of the website pages, or by directly opening an issue [here](https://github.com/elekto-dev/docs/issues/new) in the repo.

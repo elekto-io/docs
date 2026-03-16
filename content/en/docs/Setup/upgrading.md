@@ -59,9 +59,9 @@ ALTER TABLE ballot ADD CONSTRAINT ballot_pkey PRIMARY KEY ( id );
 CREATE INDEX ballot_election_id ON ballot(election_id);
 ```
 
-We [do not yet have instructions](https://github.com/elekto-io/elekto/issues/67) for upgrading MySQL or SQLite.  Those are in development.
+We [do not yet have instructions](https://github.com/elekto-dev/elekto/issues/67) for upgrading MySQL or SQLite.  Those are in development.
 If you have an Elekto/MySQL instance, please contact us via Elekto slack channel
-on CNCF Slack, or by [commenting on the issue](https://github.com/elekto-io/elekto/issues/67); we would like to work with you on this.
+on CNCF Slack, or by [commenting on the issue](https://github.com/elekto-dev/elekto/issues/67); we would like to work with you on this.
 
 If you do not care about preserving election history, your other option is 
 to simply delete the old database and create a new, empty one.  In that case,
